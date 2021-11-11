@@ -15,7 +15,7 @@
 }
 nav li{display: inline; background-color: green;}
 nav li a{color: blue}
-input{border-radius: 50%;}
+input{border-radius: 0%;}
 body{
     background-color: orange;
     color: red;
