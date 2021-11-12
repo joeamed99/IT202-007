@@ -23,63 +23,73 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-    - [ ] \(mm/dd/yyyy of completion) User will be able to register a new account
+    - [x ] \(mm/dd/yyyy of completion) User will be able to register a new account
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Status: completed
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/register.php
         - Pull Requests
-        PR link #1 (repeat as necessary)
+        PR link #1 https://github.com/joeamed99/IT202-007/pull/18
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141394973-6ad0c7c7-7583-4c80-9aaa-fa07dc12ede3.png)
+          Screenshot #1 all form fields, requiring email/username and requiring passwords to match 
+            - Screenshot #2 ![image](https://user-images.githubusercontent.com/90230600/141395884-9dc85ade-88bb-491a-b17b-bffc8450ec80.png)
+          Screenshot #2 email must be unique 
+          Screenshot #3 ![image](https://user-images.githubusercontent.com/90230600/141396455-be67f12a-d1e4-46bc-9f28-57a0933c15dd.png)
+          Screenshot #3 hashed passwords containing up to 60 characters and require table headings 
+          Screenshot #4 ![image](https://user-images.githubusercontent.com/90230600/141396772-1894e3e4-e0a1-4681-a7d4-3d2ef05e15b2.png)
+          Screenshot #4    requiring unique user name 
+          Screenshot #5 ![image](https://user-images.githubusercontent.com/90230600/141396936-07caf195-c67a-4544-ae8e-b4043ad8b006.png)
+          Screenshot #5 username is required 
+          Screenshot #6 ![image](https://user-images.githubusercontent.com/90230600/141397277-2be7ed5b-48f5-46fe-980e-0b7ea7e3d42d.png)
+          Screenshot #6 notify user if username is taken w/o wiping the form 
+    - [x ] \(mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status:completed
         - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
         - Pull Requests
         - PR link #1 (repeat as necessary)
         - Screenshots
         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
             - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to logout
+    - [ x] \(mm/dd/yyyy of completion) User will be able to logout
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status: completed
         - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
         - Pull Requests
         - PR link #1 (repeat as necessary)
         - Screenshots
         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
             - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Basic security rules implemented
+    - [x ] \(mm/dd/yyyy of completion) Basic security rules implemented
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status: completed
         - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
         - Pull Requests
         - PR link #1 (repeat as necessary)
         - Screenshots
         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
         - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Basic Roles implemented
+    - [x ] \(mm/dd/yyyy of completion) Basic Roles implemented
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status: completed
         - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
         - Pull Requests
         - PR link #1 (repeat as necessary)
         - Screenshots
         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
             - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
+    - [ x] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status: completed
         - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
         - Pull Requests
         - PR link #1 (repeat as necessary)
         - Screenshots
         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
             - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Any output messages/errors should be “user friendly”
+    - [x ] \(mm/dd/yyyy of completion) Any output messages/errors should be “user friendly”
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
+        - Status: completed
         - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
         - Pull Requests
         - PR link #1 (repeat as necessary)
