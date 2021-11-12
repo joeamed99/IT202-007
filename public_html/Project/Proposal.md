@@ -23,7 +23,7 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-    - [x ] \(mm/dd/yyyy of completion) User will be able to register a new account
+    - [x ] \(10/28/2021) User will be able to register a new account
         -  List of Evidence of Feature Completion
         - Status: completed
         - Direct Link: https://yaa25-prod.herokuapp.com/Project/register.php
@@ -42,78 +42,95 @@
           Screenshot #5 username is required 
           Screenshot #6 ![image](https://user-images.githubusercontent.com/90230600/141397277-2be7ed5b-48f5-46fe-980e-0b7ea7e3d42d.png)
           Screenshot #6 notify user if username is taken w/o wiping the form 
-    - [x ] \(mm/dd/yyyy of completion) User will be able to login to their account (given they enter the correct credentials)
+    - [x ] \(10/31/2021) User will be able to login to their account (given they enter the correct credentials)
         -  List of Evidence of Feature Completion
         - Status:completed
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/login.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
-        - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [ x] \(mm/dd/yyyy of completion) User will be able to logout
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/20
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141399546-04e2e9f8-aa35-4dcf-926f-24a0d3e287ff.png)
+          Screenshot #1 login in with email 
+          Screenshot #2 ![image](https://user-images.githubusercontent.com/90230600/141400126-166e5ef0-3b97-4bd3-a9f1-02ae6872c1aa.png)
+          Screenshot #2 password is required to login 
+          Screenshot #3 ![image](https://user-images.githubusercontent.com/90230600/141394973-6ad0c7c7-7583-4c80-9aaa-fa07dc12ede3.png)
+          Screenshot #3 friendly error message
+          Screenshot #4 ![image](https://user-images.githubusercontent.com/90230600/141400634-9c56d70e-1945-424a-a4d5-97c364f7fef5.png)
+          Screenshot #4 fetch user role and save to session  
+          Screenshot #5 ![image](https://user-images.githubusercontent.com/90230600/141401030-7b8151fd-db26-4efc-845f-c9cb3ab2d813.png)
+          Screenshot #5 landing page after login 
+          Screenshot #6 ![image](https://user-images.githubusercontent.com/90230600/141401223-89f4dc51-c365-4f9b-8a29-b712e615ec52.png)
+          Screenshot #6 users must be logged in to view page 
+    - [ x] \(10/21/2021) User will be able to logout
         -  List of Evidence of Feature Completion
         - Status: completed
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/login.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/30
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [x ] \(mm/dd/yyyy of completion) Basic security rules implemented
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141402709-d358ce4f-a6e0-42b0-ae41-c7e6e8bd97d9.png)
+          Screenshot #1 logout redirects to login 
+          unable to capture message 
+    - [x ] \(10/28/2021) Basic security rules implemented
         -  List of Evidence of Feature Completion
         - Status: completed
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Direct Link : https://yaa25-prod.herokuapp.com/Project/sql/init_db.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/18
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-    - [x ] \(mm/dd/yyyy of completion) Basic Roles implemented
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141403913-ac471220-36cf-472c-b9ea-8be371f47451.png)
+          Screenshot #1 check if user is logged in 
+          Screenshot #2 ![image](https://user-images.githubusercontent.com/90230600/141400634-9c56d70e-1945-424a-a4d5-97c364f7fef5.png)
+          Screenshot #2 roles table 
+    - [x ] \(10/28/2021) Basic Roles implemented
         -  List of Evidence of Feature Completion
         - Status: completed
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/sql/init_db.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/19
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [ x] \(mm/dd/yyyy of completion) Site should have basic styles/theme applied; everything should be styled
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141400634-9c56d70e-1945-424a-a4d5-97c364f7fef5.png)
+            - Screenshot #1 roles table 
+              Screenshot #2 ![image](https://user-images.githubusercontent.com/90230600/141405739-4fe33b38-8cfc-46be-a4dd-ce61cffb3ece.png)
+              Screenshot #2 user roles table 
+              Screenshot #3 ![image](https://user-images.githubusercontent.com/90230600/141406129-cde23ca1-8e50-4849-8074-55a2f1f876f1.png)
+              Screenshot #3 check specific function 
+
+    - [ x] \(11/11/2021) Site should have basic styles/theme applied; everything should be styled
         -  List of Evidence of Feature Completion
         - Status: completed
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/styles.css
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/27
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [x ] \(mm/dd/yyyy of completion) Any output messages/errors should be “user friendly”
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141406707-ba2961e3-a583-4199-a850-e09098a621f1.png)
+          Screenshot #1 styles
+    - [x ] \(10/31/2021) Any output messages/errors should be “user friendly”
         -  List of Evidence of Feature Completion
         - Status: completed
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/login.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/20
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to see their profile
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141394973-6ad0c7c7-7583-4c80-9aaa-fa07dc12ede3.png)
+            - Screenshot #1 user friendly error message 
+    - [ x] \(10/28/2021) User will be able to see their profile
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Status: complete
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/profile.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/18
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to edit their profile
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141407398-f7b129eb-770f-43dd-8eff-ffd12ab14ce5.png)
+          Screenshot #1 users can see profile 
+    - [ x] \(10/28/2021) User will be able to edit their profile
         -  List of Evidence of Feature Completion
-        - Status: Pending (Completed, Partially working, Incomplete, Pending)
-        - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+        - Status: complete
+        - Direct Link: https://yaa25-prod.herokuapp.com/Project/profile.php
         - Pull Requests
-        - PR link #1 (repeat as necessary)
+        - PR link #1 https://github.com/joeamed99/IT202-007/pull/18
         - Screenshots
-        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-            - Screenshot #1 description explaining what you're trying to show
+        - Screenshot #1 ![image](https://user-images.githubusercontent.com/90230600/141407758-27c23428-3892-4940-b473-b941d6e12308.png)
+          Screenshot #1 edit profile 
 - Milestone 2
 - Milestone 3
 - Milestone 4
