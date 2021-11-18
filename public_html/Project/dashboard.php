@@ -9,16 +9,16 @@ require(__DIR__ . "/../../partials/nav.php");
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Home </a>
+       
        
         <div class="collapse navbar-collapse" id="navContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                create account  </a></li>
-                    <li class="nav-item"> Profile </a></li>
-               
-                
-                    <li class="nav-item " >Login </a></li>
-                    <li class="nav-item" > Register </a></li>
+               <li class="nav-item"> <a class="nav-link" href="# "> Create Account  </a> </li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo get_url('profile.php'); ?>"> Profile </a></li>
+                <li class ="nav-item " > <a class="nav-link" href="# "> Deposit </a></li>
+                <li class ="nav-item" > <a class="nav-link" href="# "> Withdraw </a></li>
+                <li class ="nav-item" > <a class="nav-link" href="# "> Transfer </a></li>
+                <li class ="nav-item" > <a class="nav-link" href="# "> My Accounts </a></li>
             
                 
                 
@@ -29,7 +29,7 @@ require(__DIR__ . "/../../partials/nav.php");
 </nav>
    
 
-?>
+
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
