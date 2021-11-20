@@ -61,7 +61,7 @@ require_once(__DIR__ . "/../lib/functions.php");
                 <?php endif; ?>
             </ul>
             <span class="navbar-text show-balance">
-                Test Placeholder, should get replaced if balance works
+                
             </span>
         </div>
     </div>
