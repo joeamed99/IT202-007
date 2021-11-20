@@ -13,7 +13,9 @@
 .alert-info {
     background-color:turquoise;
 }
-nav li{display: inline; background-color: green;}
+nav li{display: inline;}
+
+
 nav li a{color: blue}
 input{border-radius: 0%;}
 body{
