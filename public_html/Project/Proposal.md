@@ -20,7 +20,7 @@
         - Screenshot #1 description explaining what you're trying to show
 ### End Line item / Feature Template
 --> 
-### Proposal Checklist and Evidence
+## Proposal Checklist and Evidence
 
 - Milestone 1
     - [x ] \(10/28/2021) User will be able to register a new account
