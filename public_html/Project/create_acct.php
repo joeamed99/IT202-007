@@ -20,7 +20,7 @@ if (!is_logged_in()) {
 if(isset($_POST["save"])){
 	$bal = $_POST["balance"];
 	if($bal < 5){  
-	    flash("Minimum $5 balance in order to open an account");
+	    flash("Account must have a minimum of $5");
 	}
        	else{
 	    $acctnum = rand(100000000000, 999999999999);
