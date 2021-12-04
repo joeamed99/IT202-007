@@ -1,8 +1,8 @@
-<div id="balance-value">
+<div id="balance">
     Balance: <?php echo get_account_balance(); ?>
 </div>
 <script>
-    let bv = document.getElementById("balance-value");
+    let bv = document.getElementById("balance");
     //I'll make this flexible so I can define various placeholders and copy
     //the value into all of them
     let placeholders = document.getElementsByClassName("show-balance");

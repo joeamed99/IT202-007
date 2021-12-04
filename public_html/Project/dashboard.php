@@ -12,12 +12,12 @@ require(__DIR__ . "/../../partials/nav.php");
           
         <div class="collapse navbar-collapse" id="navContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav1-item"> <a class="nav-link" href="# "> Create Account  </a> </li>
+               <li class="nav1-item"> <a class="nav-link" href="<?php echo get_url('create_acct.php'); ?>"> Create Account </a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo get_url('profile.php'); ?>"> Profile </a></li>
-                <li class ="nav-item " > <a class="nav-link" href="# "> Deposit </a></li>
-                <li class ="nav-item" > <a class="nav-link" href="# "> Withdraw </a></li>
+                <li class ="nav-item " > <a class="nav-link" href="<?php echo get_url('transaction.php?type=deposit'); ?>"> Deposit </a></li>
+                <li class ="nav-item" > <a class="nav-link" href="<?php echo get_url('transaction.php?type=withdraw'); ?>"> Withdraw </a></li>
                 <li class ="nav-item" > <a class="nav-link" href="# "> Transfer </a></li>
-                <li class ="nav-item" > <a class="nav-link" href="# "> My Accounts </a></li>
+                <li class ="nav-item" > <a class="nav-link" href="<?php echo get_url('view_accounts.php'); ?>"> My Accounts </a></li>
             
                 
                 
