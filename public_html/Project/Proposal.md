@@ -193,7 +193,7 @@
 - Milestone 3
 - Milestone 4
 ### Intructions
-#### Don't delete this
+## Don't delete this
 1. Pick one project type
 2. Create a proposal.md file in the root of your project directory of your GitHub repository
 3. Copy the contents of the Google Doc into this readme file
