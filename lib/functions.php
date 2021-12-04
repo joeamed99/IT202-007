@@ -154,7 +154,7 @@ function get_or_create_account()
         
         $account = ["id" => -1, "account_number" => false, "balance" => 0];
         
-        $query = "SELECT id, account, balance from BGD_Accounts where user_id = :uid LIMIT 1";
+        $query = "SELECT id, account, balance from Accounts where user_id = :uid LIMIT 1";
         $db = getDB();
         $stmt = $db->prepare($query);
         try {
@@ -220,7 +220,7 @@ function get_or_create_account()
 function refresh_account_balance()
 {
     if (is_logged_in()) {
-        //cache account balance via BGD_Bills_History history
+        
         $query = "UPDATE Accounts set balance = (SELECT IFNULL(SUM(diff), 0) from History WHERE src = :src) where id = :src";
         $db = getDB();
         $stmt = $db->prepare($query);
@@ -235,7 +235,7 @@ function refresh_account_balance()
 
 function change_bills($bills, $reason, $src = -1, $dest = -1, $memo = "")
 {
-    //I'm choosing to ignore the record of 0 point transactions
+    
     if ($bills > 0) {
         $query = "INSERT INTO History (src, dest, diff, reason, memo) 
             VALUES (:acs, :acd, :pc, :r,:m), 
@@ -254,9 +254,7 @@ function change_bills($bills, $reason, $src = -1, $dest = -1, $memo = "")
         $stmt = $db->prepare($query);
         try {
             $stmt->execute($params);
-            //Only refresh the balance of the user if the logged in user's account is part of the transfer
-            //this is needed so future features don't waste time/resources or potentially cause an error when a calculation
-            //occurs without a logged in user
+            
             if ($src === get_user_id() || $dest === get_user_id()) {
                 refresh_account_balance();
             }
@@ -265,3 +263,146 @@ function change_bills($bills, $reason, $src = -1, $dest = -1, $memo = "")
         }
     }
 }
+// function do_bank_action($source, $dest, $balanceChange, $type, $memo,$date){
+// 	$db = getDB();
+	function getRealTimeBalance($balanceChange){
+        $db = getDB();
+        $q = "SELECT ifnull(SUM(balance), 0) as total from Accounts WHERE account_number=:id";
+        $stmt = $db->prepare($q);
+        $s = $stmt->execute([":id" =>$balanceChange]);
+        if ($s){
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            $total = (float)$result["total"]; 
+            return $total;
+        }
+        return 0;
+    }
+
+
+function do_bank_action($account1, $account2, $amountChange, $type, $memo){
+    $db = getDB();
+    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $r = $stmt->execute([ ":id" => $account1]);
+    $src =$stmt->fetch(PDO::FETCH_ASSOC);
+    $src_total =$src['balance'];
+
+    if ($account1 > 1 && $src_total < $amountChange){
+        flash ("You do not have enough money available for this transaction");
+        return false;
+    }
+
+    $src_total -= $amountChange;
+
+    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $r = $stmt->execute([ ":id" => $account2]);
+    $dest = $stmt->fetch(PDO::FETCH_ASSOC);
+    $dest_total =$dest['balance'];
+    $dest_total += $amountChange;
+
+    $query = "INSERT INTO `Transactions` (`source`, `dest`, `BalanceChange`, `TransactionType`, `memo`, `ExpectedTotal`) 
+    VALUES(:p1a1, :p1a2, :p1change, :type, :memo, :a1total), 
+            (:p2a1, :p2a2, :p2change, :type, :memo, :a2total)";
+    
+    $stmt = $db->prepare($query);
+    $stmt->bindValue(":p1a1", $account1);
+    $stmt->bindValue(":p1a2", $account2);
+    $stmt->bindValue(":p1change", $amountChange*-1);
+    $stmt->bindValue(":type", $type);
+    $stmt->bindValue(":memo", $memo);
+    $stmt->bindValue(":a1total", $src_total);
+    // $stmt->bindValue(":date", $date);
+    //flip data for other half of transaction
+    $stmt->bindValue(":p2a1", $account2);
+    $stmt->bindValue(":p2a2", $account1);
+    $stmt->bindValue(":p2change", ($amountChange));
+    $stmt->bindValue(":type", $type);
+    $stmt->bindValue(":memo", $memo);
+    $stmt->bindValue(":a2total", $dest_total);
+    // $stmt->bindValue(":date", $date);
+    $r = $stmt->execute();
+    if($r){
+        updateAccount($account1, $src_total);
+        updateAccount($account2, $dest_total);
+    }
+    else{
+        $e = $stmt->errorInfo();
+        flash("Error creating: " . var_export($e, true));
+    }
+    
+    return $r;
+}
+function updateAccount($id, $bal){
+    $db = getDB();
+    $stmt = $db->prepare("UPDATE Accounts set balance=:bal where id=:id");
+    $r = $stmt->execute([
+        ":bal"=>$bal,
+        // ":modified"=>$date,
+        ":id"=>$id
+    ]);
+    if($r){
+        return $r;
+    }
+    else{
+        $e = $stmt->errorInfo();
+        flash("Error updating: " . var_export($e, true));
+    }
+    return $r;
+}
+
+    function do_bank_extTransfer($account1, $account2, $lastName, $amountChange, $type, $memo){
+        $db = getDB();
+        
+	$stmt = $db ->prepare("SELECT Accounts.id FROM Accounts JOIN Users on Users.id=Accounts.user_id WHERE Accounts.account_number like :account2 AND Users.lastName like :lastName");
+        $r = $stmt->execute([ ":account2" => "%$account2", ":lastName" => "%$lastName%"]);
+        if ($r) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        else {
+           // $e = $stmt->errorInfo();
+        //flash($e[2]);
+	    flash("there was an error with your transaction. Please check the details and try again.");
+        }
+    function getWorldID(){
+        $db = getDB();
+        $q = "SELECT id from Accounts WHERE account_number='000000000000'";
+        $stmt = $db->prepare($q);
+            $s = $stmt->execute();
+            $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $worldID = $results["id"];
+        
+        return $worldID;
+    }
+        
+        
+        
+        if (!isset($v)) {
+                echo "";
+                return;
+            }
+            echo htmlspecialchars($v, ENT_QUOTES, "UTF-8");
+        }
+        function getAccount($n){
+            switch ($n) {
+                case "checking":
+                    echo "Checking";
+                    break;
+                case "savings":
+                    echo "Savings";
+                    break;
+                case "loan":
+                    echo "Loan";
+                    break;
+                case "world":
+                    echo "World";
+                    break;
+                default:
+                    echo "Unsupported state: " . se($n);
+                    break;
+                }
+        
+        
+    }
+ 
+
+
