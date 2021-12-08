@@ -156,6 +156,7 @@
 ### Proposal Checklist and Evidence
 - Milestone 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   - [ ] \(mm/dd/yyyy of completion)  Create the <span style="text-decoration:underline;">Accounts</span> table (id, account_number [unique, always 12 characters], user_id, balance (default 0), account_type, created, modified)
     -  List of Evidence of Feature Completion
       - Status: Pending (Completed, Partially working, Incomplete, Pending)
@@ -229,6 +230,8 @@
         - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
           - Screenshot #1 description explaining what you're trying to show
 =======
+=======
+>>>>>>> 4d8bfcc1b74a178664d08ec45031a53ae0ddce92
 # Project Name: Simple Bank 
 ## Project Summary: This project will create a bank simulation for users. They’ll be able to have various accounts, do standard bank functions like deposit, withdraw, internal (user’s accounts)/external(other user’s accounts) transfers, and creating/closing accounts.
 
@@ -252,7 +255,7 @@
       
 ### End Line item / Feature Template
 --> 
->>>>>>> 4d8bfcc1b74a178664d08ec45031a53ae0ddce92
+
 - Milestone 3
   [ ] \(mm/dd/yyyy of completion) User will be able to transfer between their accounts
     -  List of Evidence of Feature Completion
