@@ -28,7 +28,6 @@ if(isset($_GET["page"])){
 ?>
 
 <?php
-//fetching
 $id = -1;
 if(isset($_GET["id"])){
     $id = $_GET["id"];
