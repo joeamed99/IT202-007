@@ -3,6 +3,23 @@ require_once(__DIR__ . "/../../partials/nav.php");
 is_logged_in(true);
 ?>
 <?php
+$db = getDB();
+$stmt = $db->prepare("SELECT FirstName,LastName from Users where id = :id LIMIT 1");
+try {
+    $stmt->execute([":id" => get_user_id()]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        
+        $FirstName=$user["FirstName"];
+        $LastName=$user["LastName"];
+    } else {
+        flash("User doesn't exist", "danger");
+    }
+} catch (Exception $e) {
+    flash("An unexpected error occurred, please try again", "danger");
+    //echo "<pre>" . var_export($e->errorInfo, true) . "</pre>";
+}
+
 if (isset($_POST["save"])) {
     $email = se($_POST, "email", null, false);
     $username = se($_POST, "username", null, false);
@@ -16,7 +33,7 @@ if (isset($_POST["save"])) {
         users_check_duplicate($e->errorInfo);
     }
     //select fresh data from table
-    $stmt = $db->prepare("SELECT id, email, IFNULL(username, email) as `username` from Users where id = :id LIMIT 1");
+    $stmt = $db->prepare("SELECT id, email, FirstName,LastName IFNULL(username, email) as `username` from Users where id = :id LIMIT 1");
     try {
         $stmt->execute([":id" => get_user_id()]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,6 +41,8 @@ if (isset($_POST["save"])) {
             //$_SESSION["user"] = $user;
             $_SESSION["user"]["email"] = $user["email"];
             $_SESSION["user"]["username"] = $user["username"];
+            $FirstName=$user["FirstName"];
+            $LastName=$user["LastName"];
         } else {
             flash("User doesn't exist", "danger");
         }
@@ -93,7 +112,15 @@ $username = get_username();
     </div>
     <div class="mb-3">
         <label for="conp">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="conp" />
+        <input type="password" name="confirmPassword" id="conp" />                
+    </div>
+    <div class="mb-3">
+        <label for="FirstName">First Name</label>
+        <input type="text" name="FirstName" id="FirstName" value="<?php se($FirstName); ?>" />
+    </div>
+    <div class="mb-3">
+        <label for="LastName">Last Name</label>
+        <input type="text" name="LastName" id="LastName" value="<?php se($LastName); ?>" />
     </div>
     <input type="submit" value="Update Profile" name="save" />
 </form>

@@ -267,7 +267,7 @@ function change_bills($bills, $reason, $src = -1, $dest = -1, $memo = "")
 // 	$db = getDB();
 	function getRealTimeBalance($balanceChange){
         $db = getDB();
-        $q = "SELECT ifnull(SUM(balance), 0) as total from Accounts WHERE account_number=:id";
+        $q = "SELECT ifnull(SUM(balance), 0) as total from Accounts WHERE id=:id";
         $stmt = $db->prepare($q);
         $s = $stmt->execute([":id" =>$balanceChange]);
         if ($s){
