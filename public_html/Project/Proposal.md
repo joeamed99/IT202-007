@@ -155,8 +155,6 @@
 --> 
 ### Proposal Checklist and Evidence
 - Milestone 2
-<<<<<<< HEAD
-<<<<<<< HEAD
   - [ ] \(mm/dd/yyyy of completion)  Create the <span style="text-decoration:underline;">Accounts</span> table (id, account_number [unique, always 12 characters], user_id, balance (default 0), account_type, created, modified)
     -  List of Evidence of Feature Completion
       - Status: Pending (Completed, Partially working, Incomplete, Pending)
