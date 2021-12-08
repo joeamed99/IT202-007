@@ -155,6 +155,30 @@
 --> 
 ### Proposal Checklist and Evidence
 - Milestone 2
+# Project Name: Simple Bank 
+## Project Summary: This project will create a bank simulation for users. They’ll be able to have various accounts, do standard bank functions like deposit, withdraw, internal (user’s accounts)/external(other user’s accounts) transfers, and creating/closing accounts.
+
+## Github Link:https://github.com/joeamed99/IT202-007/tree/prod 
+## Website Link:https://yaa25-prod.herokuapp.com/
+## Your Name: Youssef Abdelrehem 
+
+<!--
+### Line item / Feature template (use this for each bullet point)
+#### Don't delete this
+
+- [ ] \(mm/dd/yyyy of completion) Feature Title (from the proposal bullet point, if it's a sub-point indent it properly)
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+      
+### End Line item / Feature Template
+--> 
+
   <table><tr><td>milestone 2</td></tr><tr><td><table><tr><td>F1 - Create the Accounts table (id, account_number [unique, always 12 characters], user_id, balance (default 0), account_type, created, modified) (2021-11-17)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
 
  [https://yaa25-prod.herokuapp.com/Project/create_acct.php](https://yaa25-prod.herokuapp.com/Project/create_acct.php)</p></td></tr><tr><td>PRs:<p>
@@ -190,7 +214,44 @@
  [https://yaa25-prod.herokuapp.com/Project/transaction.php?type=withdraw](https://yaa25-prod.herokuapp.com/Project/transaction.php?type=withdraw)</p></td></tr><tr><td>PRs:<p>
 
  [https://github.com/joeamed99/IT202-007/pull/55](https://github.com/joeamed99/IT202-007/pull/55)</p></td></tr><tr><td><table><tr><td>F8 - Form should have a dropdown of their accounts to pick from, Form should have a field to enter a positive numeric value<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698522-85209df9-9e0c-45fc-9f57-f99d1e372d4a.png"><p>drop down to pick acct, no world acct </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - For withdraw, add a check to make sure they can’t withdraw more money than the account has<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698572-939f042d-83fe-4606-8a67-2afaeff445e4.png"><p>can not withdraw more than balance </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Form should allow the user to record a memo for the transaction<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698522-85209df9-9e0c-45fc-9f57-f99d1e372d4a.png"><p>memo can be entered </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Show appropriate user-friendly error messages<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698572-939f042d-83fe-4606-8a67-2afaeff445e4.png"><p>user friendly error message </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Show user-friendly success messages<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698747-84f1f52b-5071-408b-a0cd-d18020f5b971.png"><p>user friendly success message </td></tr></td></tr></table></td></tr></td></tr></table>
+
 - Milestone 3
+  [ ] \(mm/dd/yyyy of completion) User will be able to transfer between their accounts
+    -  List of Evidence of Feature Completion
+      - Status: Pending (Completed, Partially working, Incomplete, Pending)
+      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+      - Pull Requests
+        - PR link #1 (repeat as necessary)
+      - Screenshots
+        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+          - Screenshot #1 description explaining what you're trying to show
+  [ ] \(mm/dd/yyyy of completion) Transaction History page
+    -  List of Evidence of Feature Completion
+      - Status: Pending (Completed, Partially working, Incomplete, Pending)
+      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+      - Pull Requests
+        - PR link #1 (repeat as necessary)
+      - Screenshots
+        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+          - Screenshot #1 description explaining what you're trying to show
+  [ ] \(mm/dd/yyyy of completion) User’s profile page should record/show First and Last name
+    -  List of Evidence of Feature Completion
+      - Status: Pending (Completed, Partially working, Incomplete, Pending)
+      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+      - Pull Requests
+        - PR link #1 (repeat as necessary)
+      - Screenshots
+        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+          - Screenshot #1 description explaining what you're trying to show
+  [ ] \(mm/dd/yyyy of completion) User will be able to transfer funds to another user’s account
+    -  List of Evidence of Feature Completion
+      - Status: Pending (Completed, Partially working, Incomplete, Pending)
+      - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+      - Pull Requests
+        - PR link #1 (repeat as necessary)
+      - Screenshots
+        - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+          - Screenshot #1 description explaining what you're trying to show
 - Milestone 4
 ### Intructions
 #### Don't delete this
