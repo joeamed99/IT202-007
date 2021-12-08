@@ -111,7 +111,7 @@ if (isset($id)) {
         </form>
         </table>
     <?php else: ?>
-        <p>No results</p>
+        <p>Nothing to show</p>
     <?php endif; ?>
 
 <p></p>
