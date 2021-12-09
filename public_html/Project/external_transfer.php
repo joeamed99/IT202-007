@@ -52,7 +52,7 @@ if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])
 	else{
 	   $memo = "N/A";
 	}
-	if(isset($_POST['account2']) && $_POST['account1'] == $_POST['account2']){ //checks if acc 1 and 2 are the same
+	if(isset($_POST['account2']) && $_POST['account1'] == $_POST['account2']){ 
 	    flash("Source and Destination account can not be the same!");
 	    $isvalid = false;
 	}
