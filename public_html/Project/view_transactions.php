@@ -34,10 +34,8 @@ if(isset($_GET["id"])){
 }
 $results = [];
 if (isset($id)) {
-    flash($per_page);
-    flash((int)(($page-1) * $per_page));
     $db = getDB();
-    $stmt = $db->prepare("SELECT source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate LIMIT :Pagecount OFFSET :offset");
+    $stmt = $db->prepare("SELECT source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id6 = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate LIMIT :Pagecount OFFSET :offset");
     //$r = $stmt->execute([":id" => $id,":StartDate"=>$StartDate,":EndDate"=>$EndDate,":offset"=>(int)(($page-1) * $per_page),":Pagecount"=>$per_page]);
     $stmt->bindValue(":offset", (int)(($page-1) * $per_page), PDO::PARAM_INT);
     $stmt->bindValue(":Pagecount", $per_page, PDO::PARAM_INT);
@@ -115,16 +113,16 @@ if (isset($id)) {
 
 <p></p>
 <ul class="pagination pagination-lg">
-<li><a href="<?php echo get_url('view_transactions.php?type=id'); ?>&page=">1</a></li>
-<li><a href="<?php echo get_url('view_transactions.php?type=id'); ?>&page=">2</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">3</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">4</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">5</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">6</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">7</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">8</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">9</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php'); ?>">10</a></li>
+<li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1">1</a></li>
+<li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=2">2</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=3">3</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=4">4</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=5">5</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=6">6</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=7">7</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=8">8</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=9">9</a></li>
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=10">10</a></li>
 
   </ul>
 <?php require(__DIR__ . '/../../partials/flash.php'); ?>

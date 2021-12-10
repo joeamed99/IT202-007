@@ -99,7 +99,7 @@ if(isset($_POST['submit'])){
 			}break;
 		case 'transfer':
 			if(getRealTimeBalance($_POST['source']) >= $BalanceChange){
-			    do_bank_action($_POST['source'], $_POST['dest'], ($BalanceChange * -1), '2', $memo);
+			    do_bank_action($_POST['source'], $_POST['Destination'], ($BalanceChange * -1), '2', $memo);
 			    flash("Your transaction has successfully been posted!");
 			}else{
 				flash("You do not have enough to transfer this amount");
