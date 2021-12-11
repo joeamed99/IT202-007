@@ -9,7 +9,7 @@ require(__DIR__ . "/../../partials/nav.php");
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
-          
+          ##
         <div class="collapse navbar-collapse" id="navContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                <li class="nav1-item"> <a class="nav-link" href="<?php echo get_url('create_acct.php'); ?>"> Create Account </a></li>

@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
 		$memo = "";
 		$isvalid = true;
 		if($BalanceChange <= 0){
-			flash("Amount must be greater than 0!");
+			flash("Amount must be greater than $0!");
 			$isvalid = false;
 		}
 		if(isset($_POST['memo']) && !empty($_POST['memo'])){

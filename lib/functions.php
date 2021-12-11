@@ -263,8 +263,6 @@ function change_bills($bills, $reason, $src = -1, $dest = -1, $memo = "")
         }
     }
 }
-// function do_bank_action($source, $dest, $balanceChange, $type, $memo,$date){
-// 	$db = getDB();
 	function getRealTimeBalance($balanceChange){
         $db = getDB();
         $q = "SELECT ifnull(SUM(balance), 0) as total from Accounts WHERE id=:id";
