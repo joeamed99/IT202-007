@@ -36,7 +36,7 @@ if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])
 	$memo = "";
 	$isvalid = true;
 	if($amount <= 0){ 
-	    flash("Amount must be greater than 0!");
+	    flash("Amount must be greater than $0!");
 	    $isvalid = false;
 	}
 	if(isset($_POST['memo']) && !empty($_POST['memo'])){
