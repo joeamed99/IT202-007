@@ -3,33 +3,25 @@ require_once (__DIR__ . '/../../partials/nav.php');
 
 if (!is_logged_in()) {
     flash("You need to login first!");
-    //this will redirect to login and kill the rest of this script (prevent it from executing)
     die(header("Location: login.php"));
 }
 
-//ini_set('display_errors',1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
-
-// preparing account id and accounts for dropdown list
 $srcID = get_user_id();
-$db = getDB();      //if they have the same user ID, give me their accout number and ID
-$stmt = $db->prepare("SELECT id, account_number from Accounts WHERE user_id=:user_id LIMIT 10");
+$db = getDB();     
+$stmt = $db->prepare("SELECT id, account_number from Accounts WHERE user_id=:user_id order by created DESC");
 $r = $stmt->execute([":user_id"=>get_user_id()]);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<!-- TODO Add dropdown list -->
-<form method="POST"> <!-- working on dropdown list -->
+<form method="POST"> 
 	<label for "account1"><h3><u> Transfer from Account:</u></h3></label>
 	<select name="account1" id="account1">
 	  <?php foreach($results as $r):?>
 	    <option value="<?php se($r["id"]);?>"><?php se($r["account_number"]);?></option>
 	  <?php endforeach;?>
 	</select>
-	<!-- If our sample is a transfer show other account field-->
 	<label for "account2"><h3><u>Transfer to Account:</u></h3></label>
         <input type="number" name="account2" min="999" max="9999" placeholder="Enter Last 4 Digits of Account Number"    required/>
-	<input type="text" name="lastName" placeholder="Enter Last Name of Account Holder" required/>
+	<input type="text" name="LastName" placeholder="Enter Last Name of Account Holder" required/>
 	<input type="number" name="amount" min="0" placeholder="$0.00" required/>
 	<input type="hidden" name="type" value="<?php echo $_GET['type'];?>"/>
 	<input type="text" name="memo" placeholder="Write Memo Here" />
@@ -38,7 +30,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
 if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])){
-	$type = $_POST['type'];
+	$type = 3;
 	$amount = (int)$_POST['amount'];
 	$memo = "";
 	$isvalid = true;
@@ -58,7 +50,7 @@ if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])
 	}
 	if($isvalid){
 	    if(getRealTimeBalance($_POST['account1']) >= $amount){
-	        do_bank_extTransfer($_POST['account1'], $_POST['account2'], $_POST['LastName'], ($amount * -1), $type, $memo);
+	        do_bank_extTransfer($_POST['account1'],$_POST["LastName"], $_POST['account2'], $amount, $type, $memo, "");
 	        flash("Your transfer has successfully been completed!");
 	    }else{
 		flash("You do not have enough to transfer this amount");
