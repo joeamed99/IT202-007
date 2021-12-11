@@ -123,6 +123,6 @@ if (isset($id)) {
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=8">8</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=9">9</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=10">10</a></li>
-
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1&type=" . $type>Deposit</a></li
   </ul>
 <?php require(__DIR__ . '/../../partials/flash.php'); ?>
