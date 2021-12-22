@@ -41,12 +41,12 @@ if(isset($_GET["type"])){
 $results = [];
 if (isset($id)) {
     $db = getDB();
-Milestone4
+
     $stmt = $db->prepare("SELECT source.account_type as account_type, source.created as acc_created, source.balance as balance, source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate order by created DESC LIMIT :Pagecount OFFSET :offset");
 
     $stmt = $db->prepare("SELECT source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate order by created DESC LIMIT :Pagecount OFFSET :offset");
     //$r = $stmt->execute([":id" => $id,":StartDate"=>$StartDate,":EndDate"=>$EndDate,":offset"=>(int)(($page-1) * $per_page),":Pagecount"=>$per_page]);
-dev
+
     $stmt->bindValue(":offset", (int)(($page-1) * $per_page), PDO::PARAM_INT);
     $stmt->bindValue(":Pagecount", $per_page, PDO::PARAM_INT);
     $stmt->bindValue(":StartDate", $StartDate, PDO::PARAM_STR);

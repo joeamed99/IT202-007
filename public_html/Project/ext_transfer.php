@@ -51,7 +51,7 @@ if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])
 	if($isvalid){
 	    if(getRealTimeBalance($_POST['account1']) >= $amount){
 
-	        do_bank_extTransfer($_POST['account1'],$_POST["LastName"], $_POST['account2'], $amount, $type, $memo);
+	        do_bank_extTransfer($account1, $LastName, $accNum, $amountChange, $type, $memo, $date);
 	        flash("Your transfer has successfully been completed!");
 	    }else{
 		flash("You do not have enough to transfer this amount");
