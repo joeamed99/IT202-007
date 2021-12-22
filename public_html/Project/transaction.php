@@ -33,7 +33,7 @@ $worldID = $res["id"];
 	    <option value="<?php se($r["id"]);?>"><?php se($r["account_number"]);?></option>
 	  <?php endforeach;?>
 	</select>
-	<?php if($_GET == 'transfer') : ?>
+	<?php if($_GET['type'] == 'transfer') : ?>
 
 	<label for "dest"><h3> Destination Account</h3></label>
 	<select name="dest" id="dest">
@@ -99,7 +99,7 @@ if(isset($_POST['submit'])){
 			}break;
 		case 'transfer':
 			if(getRealTimeBalance($_POST['source']) >= $BalanceChange){
-			    do_bank_action($_POST['source'], $_POST['dest'], ($BalanceChange * -1), '2', $memo);
+			    do_bank_action($_POST['dest'], $_POST['source'], ($BalanceChange * -1), '2', $memo);
 			    flash("Your transaction has successfully been posted!");
 			}else{
 				flash("You do not have enough to transfer this amount");

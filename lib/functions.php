@@ -282,7 +282,7 @@ function change_bills($bills, $reason, $src = -1, $dest = -1, $memo = "")
 
 function do_bank_action($account1, $account2, $amountChange, $type, $memo){
     $db = getDB();
-    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $stmt = $db ->prepare("SELECT account_type, balance FROM Accounts WHERE id=:id");
     $r = $stmt->execute([ ":id" => $account1]);
     $src =$stmt->fetch(PDO::FETCH_ASSOC);
     $src_total =$src['balance'];
@@ -292,13 +292,22 @@ function do_bank_action($account1, $account2, $amountChange, $type, $memo){
         return false;
     }
 
-    $src_total -= $amountChange;
 
-    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $stmt = $db ->prepare("SELECT account_type, balance FROM Accounts WHERE id=:id");
     $r = $stmt->execute([ ":id" => $account2]);
     $dest = $stmt->fetch(PDO::FETCH_ASSOC);
     $dest_total =$dest['balance'];
-    $dest_total += $amountChange;
+    if ($src['account_type'] == 'Loan'){
+        $dest_total += $amountChange;
+        $src_total += $amountChange;
+
+
+    }else{
+        $src_total -= $amountChange;
+
+        $dest_total += $amountChange;
+
+    }
 
     $query = "INSERT INTO `Transactions` (`source`, `dest`, `BalanceChange`, `TransactionType`, `memo`, `ExpectedTotal`) 
     VALUES(:p1a1, :p1a2, :p1change, :type, :memo, :a1total), 
@@ -350,38 +359,109 @@ function updateAccount($id, $bal){
     return $r;
 }
 
-    function do_bank_extTransfer($account1, $account2, $lastName, $amountChange, $type, $memo){
-        $db = getDB();
-        
-	$stmt = $db ->prepare("SELECT Accounts.id FROM Accounts JOIN Users on Users.id=Accounts.user_id WHERE Accounts.account_number like :account2 AND Users.lastName like :lastName");
-        $r = $stmt->execute([ ":account2" => "%$account2", ":lastName" => "%$lastName%"]);
-        if ($r) {
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+function loginUpdateAcc($id){
+    $db = getDB();
+    $stmt = $db->prepare("SELECT * from Accounts WHERE user_id =:id AND account_type= :acctype");
+    $stmt->bindValue(":id", $id);
+    $stmt->bindValue(":acctype", "Loan");
+    $stmt->execute();
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($results as $r){
+        $now=date('Y-m-d');
+        $diff = strtotime($now) - strtotime($r['modified']);
+        $days = abs(round($diff / 86400));
+        if ($days > 365){
+            $bal = $r['balance'] *1.10;
+            $stmt = $db->prepare("UPDATE Accounts set balance=:bal where id=:id");
+            $r = $stmt->execute([
+                ":bal"=>$bal,
+                ":id"=>$r["id"]
+            ]);
+            $stmt->execute();
+
         }
-        else {
-           // $e = $stmt->errorInfo();
-        //flash($e[2]);
-	    flash("there was an error with your transaction. Please check the details and try again.");
+
+        if($r['balance'] == 0){
+            $stmt = $db->prepare("DELETE FROM  Accounts where id=:id");
+            $r = $stmt->execute([
+                ":id"=>$r["id"]
+            ]);
+            $stmt->execute();
         }
-    function getWorldID(){
-        $db = getDB();
-        $q = "SELECT id from Accounts WHERE account_number='000000000000'";
-        $stmt = $db->prepare($q);
-            $s = $stmt->execute();
-            $results = $stmt->fetch(PDO::FETCH_ASSOC);
-        $worldID = $results["id"];
-        
-        return $worldID;
     }
-        
-        
-        
-        if (!isset($v)) {
-                echo "";
-                return;
-            }
-            echo htmlspecialchars($v, ENT_QUOTES, "UTF-8");
-        }
+}
+
+function getWorldID(){
+    $db = getDB();
+    $q = "SELECT id from Accounts WHERE account_number='000000000000'";
+    $stmt = $db->prepare($q);
+        $s = $stmt->execute();
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+    $worldID = $results["id"];
+    
+    return $worldID;
+}
+
+function do_bank_extTransfer($account1, $LastName, $accNum, $amountChange, $type, $memo){
+    $db = getDB();
+    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $r = $stmt->execute([ ":id" => $account1]);
+    $src =$stmt->fetch(PDO::FETCH_ASSOC);
+    $src_total =$src['balance'];
+
+    if ($src_total < $amountChange){
+        flash ("You do not have enough money available for this transaction");
+        return false;
+    }
+
+    $src_total -= $amountChange;
+
+    $stmt = $db ->prepare("SELECT Accounts.id FROM Accounts JOIN Users on Users.id=Accounts.user_id WHERE Accounts.account_number like :accNum AND Users.LastName like :LastName");
+    $r = $stmt->execute([ ":accNum" => "%$accNum", ":LastName" => "%$LastName%"]);
+    if ($r) {
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    else {
+        $e = $stmt->errorInfo();
+    flash($e[2]);
+    }
+    $account2 = $result['id'];
+    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $r = $stmt->execute([ ":id" => $account2]);
+    $dest = $stmt->fetch(PDO::FETCH_ASSOC);
+    $dest_total =$dest['balance'];
+    $dest_total += $amountChange;
+
+    $query = "INSERT INTO `Transactions` (`source`, `dest`, `BalanceChange`, `TransactionType`, `memo`, `ExpectedTotal`) 
+  VALUES(:p1a1, :p1a2, :p1change, :type, :memo, :a1total), 
+          (:p2a1, :p2a2, :p2change, :type, :memo, :a2total)";
+$stmt = $db->prepare($query);
+error_log("query: $query");
+  $stmt->bindValue(":p1a1", $account1);
+  $stmt->bindValue(":p1a2", $account2);
+  $stmt->bindValue(":p1change", $amountChange*-1);
+  $stmt->bindValue(":type", $type);
+  $stmt->bindValue(":memo", $memo);
+  $stmt->bindValue(":a1total", $src_total);
+  // $stmt->bindValue(":date", $date);
+  $stmt->bindValue(":p2a1", $account2);
+  $stmt->bindValue(":p2a2", $account1);
+  $stmt->bindValue(":p2change", ($amountChange));
+  $stmt->bindValue(":type", $type);
+  $stmt->bindValue(":memo", $memo);
+  $stmt->bindValue(":a2total", $dest_total);
+  // $stmt->bindValue(":date", $date);
+    $r = $stmt->execute();
+    if($r){
+        updateAccount($account1, $src_total);
+        updateAccount($account2, $dest_total);
+    }
+    else{
+        $e = $stmt->errorInfo();
+        flash("Error creating: " . var_export($e, true));
+    }
+    return $r;
+}
         function getAccount($n){
             switch ($n) {
                 case "checking":
