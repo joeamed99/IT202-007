@@ -1,4 +1,3 @@
-
 <?php
 require_once (__DIR__ . '/../../partials/nav.php');
 
@@ -36,7 +35,7 @@ if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])
 	$memo = "";
 	$isvalid = true;
 	if($amount <= 0){ 
-	    flash("Amount must be greater than $0!");
+	    flash("Amount must be greater than 0!");
 	    $isvalid = false;
 	}
 	if(isset($_POST['memo']) && !empty($_POST['memo'])){
@@ -51,7 +50,8 @@ if(isset($_POST['type']) && isset($_POST['account1']) && isset($_POST['amount'])
 	}
 	if($isvalid){
 	    if(getRealTimeBalance($_POST['account1']) >= $amount){
-	        do_bank_extTransfer($_POST['account1'],$_POST["LastName"], $_POST['account2'], $amount, $type, $memo, "");
+
+	        do_bank_extTransfer($_POST['account1'],$_POST["LastName"], $_POST['account2'], $amount, $type, $memo);
 	        flash("Your transfer has successfully been completed!");
 	    }else{
 		flash("You do not have enough to transfer this amount");
