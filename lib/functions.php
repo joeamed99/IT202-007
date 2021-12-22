@@ -313,12 +313,12 @@ function do_bank_action($account1, $account2, $amountChange, $type, $memo){
     $stmt->bindValue(":p2change", ($amountChange));
     $stmt->bindValue(":type", $type);
     $stmt->bindValue(":memo", $memo);
-    $stmt->bindValue(":a2total", $dest_total);
+    $stmt->bindValue(":a2total", $dest);
     // $stmt->bindValue(":date", $date);
     $r = $stmt->execute();
     if($r){
         updateAccount($account1, $src_total);
-        updateAccount($account2, $dest_total);
+        updateAccount($account2, $dest);
     }
     else{
         $e = $stmt->errorInfo();
@@ -344,6 +344,28 @@ function updateAccount($id, $bal){
     }
     return $r;
 }
+function do_bank_extTransfer($account1, $LastName, $accNum, $amountChange, $type, $memo, $date){
+    $db = getDB();
+    $stmt = $db ->prepare("SELECT balance FROM Accounts WHERE id=:id");
+    $r = $stmt->execute([ ":id" => $account1]);
+    $src =$stmt->fetch(PDO::FETCH_ASSOC);
+    $src_total =$src['balance'];
+
+    if ($src_total < $amountChange){
+        flash ("You do not have enough money available for this transaction");
+        return false;
+    }
+function getWorldID(){
+    $db = getDB();
+    $q = "SELECT id from Accounts WHERE account_number='000000000000'";
+    $stmt = $db->prepare($q);
+        $s = $stmt->execute();
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+    $worldID = $results["id"];
+    
+    return $worldID;
+}
+    
 
 
         function getAccount($n){
@@ -367,6 +389,7 @@ function updateAccount($id, $bal){
         
         
     }
+}
  
 
 
