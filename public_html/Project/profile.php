@@ -33,7 +33,7 @@ if (isset($_POST["save"])) {
         users_check_duplicate($e->errorInfo);
     }
     //select fresh data from table
-    $stmt = $db->prepare("SELECT id, email, FirstName,LastName IFNULL(username, email) as `username` from Users where id = :id LIMIT 1");
+    $stmt = $db->prepare("SELECT id,email,username,FirstName,LastName from Users where id = :id LIMIT 1");
     try {
         $stmt->execute([":id" => get_user_id()]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -121,7 +121,17 @@ $username = get_username();
     <div class="mb-3">
         <label for="LastName">Last Name</label>
         <input type="text" name="LastName" id="LastName" value="<?php se($LastName); ?>" />
+
     </div>
+    <div class="mb-3">
+
+    <label>Privacy Settings</label>
+            <select name="account_type">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+            </select>
+    </div>
+
     <input type="submit" value="Update Profile" name="save" />
 </form>
 

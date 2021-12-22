@@ -216,293 +216,71 @@
  [https://github.com/joeamed99/IT202-007/pull/55](https://github.com/joeamed99/IT202-007/pull/55)</p></td></tr><tr><td><table><tr><td>F8 - Form should have a dropdown of their accounts to pick from, Form should have a field to enter a positive numeric value<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698522-85209df9-9e0c-45fc-9f57-f99d1e372d4a.png"><p>drop down to pick acct, no world acct </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - For withdraw, add a check to make sure they can’t withdraw more money than the account has<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698572-939f042d-83fe-4606-8a67-2afaeff445e4.png"><p>can not withdraw more than balance </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Form should allow the user to record a memo for the transaction<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698522-85209df9-9e0c-45fc-9f57-f99d1e372d4a.png"><p>memo can be entered </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Show appropriate user-friendly error messages<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698572-939f042d-83fe-4606-8a67-2afaeff445e4.png"><p>user friendly error message </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Show user-friendly success messages<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90230600/144698747-84f1f52b-5071-408b-a0cd-d18020f5b971.png"><p>user friendly success message </td></tr></td></tr></table></td></tr></td></tr></table>
 
 - Milestone 3
-  
-<table>
-<tr><td>milestone 3</td></tr><tr><td>
-<table>
-<tr><td>F1 - User will be able to transfer between their accounts (2021-12-10)</td></tr>
-<tr><td>Status: incomplete</td></tr>
-<tr><td>Links:<p>
 
- [https://yaa25-prod.herokuapp.com/Project/transfer.php?type=transfer](https://yaa25-prod.herokuapp.com/Project/transfer.php?type=transfer)</p></td></tr>
-<tr><td>PRs:<p>
-
- [https://github.com/joeamed99/IT202-007/pull/76](https://github.com/joeamed99/IT202-007/pull/76)</p></td></tr>
-<tr><td>
-<table>
-<tr><td>F1 - Form should include a dropdown first AccountSrc and a dropdown for AccountDest (only accounts the user owns; no world account)</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/ffcc00/ffffff?text=in-progress"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664104-dad68983-790e-4ebb-9111-fec1716b2da6.png">
-<p>dropdown not appearing from heroku prod but appearing in local host </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F1 - Form should include a field for a positive numeric value</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664020-efe2727b-75ba-4115-b903-fa71cbd49220.png">
-<p>field for positive numeric value </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F1 - Form should allow the user to record a memo for the transaction</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664130-81663797-f5bf-480b-892c-2c517a4dac2f.png">
-<p>memo field </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F1 - Each transaction is recorded as a transaction pair in the Transaction table</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
-
-<tr><td>
-<img width="768px" src="">
-<p>form is not submitting </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F1 - Show appropriate user-friendly error messages & Show user-friendly success messages</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/ff0000/000000?text=incomplete"></td></tr>
-
-<tr><td>
-<img width="768px" src="">
-<p>form is not submitting but no errors in code </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<table>
-<tr><td>F2 - Transaction History page (2021-12-10)</td></tr>
-<tr><td>Status: complete</td></tr>
-<tr><td>Links:<p>
-
- [https://yaa25-prod.herokuapp.com/Project/view_transactions.php?id=142](https://yaa25-prod.herokuapp.com/Project/view_transactions.php?id=142)</p></td></tr>
-<tr><td>PRs:<p>
-
- [https://github.com/joeamed99/IT202-007/pull/74](https://github.com/joeamed99/IT202-007/pull/74)</p><p>
-
- [https://github.com/joeamed99/IT202-007/pull/80](https://github.com/joeamed99/IT202-007/pull/80)</p></td></tr>
-<tr><td>
-<table>
-<tr><td>F2 - Will show the latest 10 transactions by default</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145665806-db44766d-af90-40e4-a73c-fa5010a6af31.png">
-<p>show 10 latest transactions </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F2 - User will be able to filter transactions between two dates</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664688-3f9e31be-19c3-475a-bf5d-a86911f3b6e0.png">
-<p>filter between two dates </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F2 - User will be able to filter transactions by type (deposit, withdraw, transfer)</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664841-40ccb778-40cf-40a1-84db-1cb77a2a892a.png">
-<p>filter by type </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F2 - Transactions should paginate results after the initial 10</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664893-531952db-6400-409f-befc-1934c968e564.png">
-<p>paginate results after initial 10 transactions</p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<table>
-<tr><td>F3 - User’s profile page should record/show First and Last name (2021-12-08)</td></tr>
-<tr><td>Status: complete</td></tr>
-<tr><td>Links:<p>
-
- [https://yaa25-prod.herokuapp.com/Project/profile.php](https://yaa25-prod.herokuapp.com/Project/profile.php)</p></td></tr>
-<tr><td>PRs:<p>
-
- [https://github.com/joeamed99/IT202-007/pull/63](https://github.com/joeamed99/IT202-007/pull/63)</p></td></tr>
-<tr><td>
-<table>
-<tr><td>F3 - User’s profile page should record/show First and Last name</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145664973-2a504cf9-3519-4337-ab33-414d521740b2.png">
-<p>first and last name shown in profile </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<table>
-<tr><td>F4 - User will be able to transfer funds to another user’s account (2021-12-08)</td></tr>
-<tr><td>Status: complete</td></tr>
-<tr><td>Links:<p>
-
- [https://yaa25-prod.herokuapp.com/Project/external_transfer.php?type=external_transfer](https://yaa25-prod.herokuapp.com/Project/external_transfer.php?type=external_transfer)</p></td></tr>
-<tr><td>PRs:<p>
-
- [https://github.com/joeamed99/IT202-007/pull/65](https://github.com/joeamed99/IT202-007/pull/65)</p></td></tr>
-<tr><td>
-<table>
-<tr><td>F4 - Form should include a dropdown of the current user’s accounts (as AccountSrc)</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145665216-b1424aba-7795-4e98-bd4c-65d351fc45b2.png">
-<p>account dropdown menu</p>
-</td></tr>
-
-<tr><td>
-<img width="768px" src="">
-<p></p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F4 - Form should include a field for the last 4 digits of the destination user’s</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145665246-9aef08d3-7b8f-4904-bbd7-68a658fe6cd1.png">
-<p>receiver's last digit of acct num</p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F4 - Form should include a field for the destination user’s last name</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145665284-46171e3c-6cf3-4738-be1e-e3f25501d2b6.png">
-<p>dest last name </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F4 -  Form should include a field for a positive numerical value</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145665331-35b5f4c5-50ad-4805-8feb-4913343deb93.png">
-<p>enter amt being sent </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr><td>
-<table>
-<tr><td>F4 - Form should allow the user to record a memo for the transaction</td></tr>
-<tr><td>Status: 
-<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
-
-<tr><td>
-<img width="768px" src="https://user-images.githubusercontent.com/90230600/145665359-c8105407-fe2a-4000-a44c-b5736fbd1101.png">
-<p>write a memo </p>
-</td></tr>
-
-</td>
-</tr>
-</table>
-</td>
-</tr></td></tr></table>
 - Milestone 4
+- [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in
+Users table)
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] \(mm/dd/yyyy of completion) User will be able open a savings account
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] \(mm/dd/yyyy of completion) User will be able to take out a loan
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] \(mm/dd/yyyy of completion) Listing accounts and/or viewing Account Details should show any applicable APY
+or “-” if none is set for the particular account (may alternatively just hide the
+display for these types)
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] \(mm/dd/yyyy of completion) User will be able to close an account
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] \(mm/dd/yyyy of completion) Admin role (leave this section for last)
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+### End Line item / Feature Template        
+### End Line item / Feature Template        
+### End Line item / Feature Template        
+### End Line item / Feature Template        
+### End Line item / Feature Template        
+### End Line item / Feature Template
 ### Intructions
 #### Don't delete this
 1. Pick one project type
