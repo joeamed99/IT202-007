@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
 		$memo = "";
 		$isvalid = true;
 		if($BalanceChange <= 0){
-			flash("Amount must be greater than 0!");
+			flash("Amount must be greater than $0!");
 			$isvalid = false;
 		}
 		if(isset($_POST['memo']) && !empty($_POST['memo'])){
@@ -99,7 +99,11 @@ if(isset($_POST['submit'])){
 			}break;
 		case 'transfer':
 			if(getRealTimeBalance($_POST['source']) >= $BalanceChange){
+ Milestone4
 			    do_bank_action($_POST['dest'], $_POST['source'], ($BalanceChange * -1), '2', $memo);
+
+			    do_bank_action($_POST['source'], $_POST['Destination'], ($BalanceChange * -1), '2', $memo);
+ dev
 			    flash("Your transaction has successfully been posted!");
 			}else{
 				flash("You do not have enough to transfer this amount");
