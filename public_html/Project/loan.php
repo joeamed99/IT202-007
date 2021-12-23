@@ -77,7 +77,7 @@ if(isset($_POST["save"])){
             </option>
         <?php endforeach; ?> 
     </select> 
-	<label>Balance (minimum $500)</label>
+	<label>Loan Amount</label>
 	<input type="number" min="500" name="balance"/>
 	<input type="submit" name="save" value="Get Loan"/>
 </form>

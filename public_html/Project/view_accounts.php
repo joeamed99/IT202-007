@@ -66,7 +66,7 @@ function deleteAcc($id){
 
 			<a type="button" class = "btn btn-primary" href="transaction.php?type=<?php se("deposit");?>">Deposit</a>
 			<a type="button" class = "btn btn-primary" href="transaction.php?type=<?php se("withdraw");?>">Withdraw</a>
-            <a type="button" class = "btn btn-primary" href="transaction.php?type=<?php se("Transfer");?>">Transfer</a>
+            <a type="button" class = "btn btn-primary" href="transaction.php?type=<?php se("transfer");?>">Transfer</a>
 			<a type="button" class = "btn btn-primary" href="view_transactions.php?id=<?php se($r['id']);?>">Transactions</a>
             <form method="post">
                 <input type="submit" name="delete" class = "btn btn-primary" id="test" value="Delete Account" />
