@@ -54,6 +54,7 @@ if(isset($_POST["save"])){
 	<label>Account Type</label>
 	<select name="account_type">
 		<option value="checking">Checking</option>
+		<option value="Savings">Saving</option>
 		</select>
 	<input type="number"  name="balance" placeholder="Balance"/>
 	<input type="submit" name="save" value="Create"/>
