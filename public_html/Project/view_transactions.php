@@ -44,7 +44,7 @@ if (isset($id)) {
 
     $stmt = $db->prepare("SELECT source.account_type as account_type, source.created as acc_created, source.balance as balance, source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate order by created DESC LIMIT :Pagecount OFFSET :offset");
 
-    $stmt = $db->prepare("SELECT source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate order by created DESC LIMIT :Pagecount OFFSET :offset");
+    $stmt = $db->prepare("SELECT source.account_type as account_type, source.account_number as source, dest.account_number as dest, ExpectedTotal, memo, T.TransactionType, T.BalanceChange, T.created from Transactions as T JOIN Accounts as source on source.id = T.source JOIN Accounts as dest on dest.id = T.dest WHERE T.source =:id and T.created BETWEEN :StartDate AND :EndDate order by created DESC LIMIT :Pagecount OFFSET :offset");
     //$r = $stmt->execute([":id" => $id,":StartDate"=>$StartDate,":EndDate"=>$EndDate,":offset"=>(int)(($page-1) * $per_page),":Pagecount"=>$per_page]);
 
     $stmt->bindValue(":offset", (int)(($page-1) * $per_page), PDO::PARAM_INT);
@@ -79,8 +79,8 @@ if (isset($id)) {
 	 <tr class="text-center">
 	   <th scope="col">Account Number: <?php se($results[0]["source"]);?> </th>
            <th scope="col">Account Type: <?php se($results[0]["account_type"]);?></th>
-           <th scope="col">Created Date:  <?php se($results[0]["acc_created"]);?> </th>
-           <th scope="col">Balance: <?php se($results[0]["balance"]);?></th>
+           <th scope="col">Created Date:  <?php se($results[0]["created"]);?> </th>
+           <th scope="col">Balance: <?php se($results[0]["ExpectedTotal"]);?></th>
 
 	  </tr>
 	</thead>
@@ -92,8 +92,8 @@ if (isset($id)) {
     <?php if (count($results) > 0): ?>
         <thead>
 	 <tr class="text-center">
-	   <th scope="col">Destination</th>
-           <th scope="col">Source</th>
+	   <th scope="col">Source</th>
+           <th scope="col">Destination</th>
            <th scope="col">Transaction Type</th>
            <th scope="col">Change</th>
            <th scope="col">Memo</th>
@@ -183,7 +183,7 @@ if (isset($id)) {
 </ul>
 <br>
 <ul class="pagination pagination-lg">
-Milestone4
+
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1&type=0">Deposit</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1&type=1">Withdraw</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1&type=2">Transfer</a></li>
@@ -191,7 +191,7 @@ Milestone4
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1">All Transactions</a></li>
 
 
-<li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1">1</a></li>
+<!-- <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1">1</a></li>
 <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=2">2</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=3">3</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=4">4</a></li>
@@ -200,9 +200,9 @@ Milestone4
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=7">7</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=8">8</a></li>
     <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=9">9</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=10">10</a></li>
-    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=1&type=" . $type>Deposit</a></li
- dev
+    <li><a href="<?php echo get_url('view_transactions.php?id=' . $id); ?>&page=10">10</a></li> -->
+    
+ 
   </ul>
 </div>
 <?php require(__DIR__ . '/../../partials/flash.php'); ?>
