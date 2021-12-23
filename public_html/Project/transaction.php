@@ -90,7 +90,7 @@ if(isset($_POST['submit'])){
 			flash("Deposit Successful!");
 			break;
 		case 'withdraw':
-			flash($_POST['source']);
+			//flash($_POST['source']);
 			if(getRealTimeBalance($_POST['source']) >= $BalanceChange){
 			    do_bank_action($_POST['source'], $worldID, ($BalanceChange), '1', $memo);
 			    flash("Withdrawal Successful!");
@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
  
 			    do_bank_action($_POST['dest'], $_POST['source'], ($BalanceChange * -1), '2', $memo);
 
-			    do_bank_action($_POST['source'], $_POST['Destination'], ($BalanceChange * -1), '2', $memo);
+			    //do_bank_action($_POST['source'], $_POST['dest'], ($BalanceChange * -1), '2', $memo);
 			    flash("Your transaction has successfully been posted!");
 			}else{
 				flash("You do not have enough to transfer this amount");
