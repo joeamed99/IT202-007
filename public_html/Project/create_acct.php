@@ -27,16 +27,16 @@ if(isset($_POST["save"])){
 	    ]);
 	    if($r){
 	        $accountID = $db->lastInsertId();
-            function getWorldID(){
-                $db = getDB();
-                $q = "SELECT id from Accounts WHERE account_number='000000000000'";
-                $stmt = $db->prepare($q);
-                    $s = $stmt->execute();
-                    $results = $stmt->fetch(PDO::FETCH_ASSOC);
-                $worldID = $results["id"];
+            // function getWorldID(){
+            //     $db = getDB();
+            //     $q = "SELECT id from Accounts WHERE account_number='000000000000'";
+            //     $stmt = $db->prepare($q);
+            //         $s = $stmt->execute();
+            //         $results = $stmt->fetch(PDO::FETCH_ASSOC);
+            //     $worldID = $results["id"];
 
-                return $worldID;
-            }
+            //     return $worldID;
+            // }
 
             do_bank_action(getworldID(), $accountID, ($bal), 0, "new account","ExpectedTotal");
 	    	flash("Account created successfully! Your new account has an id number of: " . $accountID);
