@@ -507,63 +507,319 @@
 </tr></td></tr></table>
 prod
 - Milestone 4
-- [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in
-Users table)
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] \(mm/dd/yyyy of completion) User will be able open a savings account
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] \(mm/dd/yyyy of completion) User will be able to take out a loan
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] \(mm/dd/yyyy of completion) Listing accounts and/or viewing Account Details should show any applicable APY
-or “-” if none is set for the particular account (may alternatively just hide the
-display for these types)
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] \(mm/dd/yyyy of completion) User will be able to close an account
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] \(mm/dd/yyyy of completion) Admin role (leave this section for last)
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
+
+<table>
+<tr><td>milestone 4</td></tr><tr><td>
+<table>
+<tr><td>F1 - User can set their profile to be public or private (will need another column in Users table) (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://yaa25-prod.herokuapp.com/Project/profile.php](https://yaa25-prod.herokuapp.com/Project/profile.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/joeamed99/IT202-007/pull/86](https://github.com/joeamed99/IT202-007/pull/86)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F1 - User can set their profile to be public or private</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147074414-70ff82ba-64e6-4c18-befc-e6bb23f8f49f.png">
+<p>set acct to public or private </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F2 - User will be able open a savings account (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://yaa25-prod.herokuapp.com/Project/create_acct.php](https://yaa25-prod.herokuapp.com/Project/create_acct.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/joeamed99/IT202-007/pull/94](https://github.com/joeamed99/IT202-007/pull/94)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F2 -  System will generate a 12 digit/character account number per the existing rules (see Checking Account above)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147197417-df9cbb1a-73bd-4837-8646-134b41cba95b.png">
+<p>12 digit account number </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - associate account to user </td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147197417-df9cbb1a-73bd-4837-8646-134b41cba95b.png">
+<p>associate account to user </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - account type is set to savings </td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147197417-df9cbb1a-73bd-4837-8646-134b41cba95b.png">
+<p>account type is savings </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - User will see user-friendly success message when account is created successfully</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147197867-ff1497df-baa7-4e8f-9c7e-edc3be493b30.png">
+<p>success message</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - User will see user-friendly error messages when appropriate</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147197973-03e7fcae-175d-4cb2-86f0-cad84dc924d1.png">
+<p>error message</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F3 -  User will be able to take out a loan (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://yaa25-prod.herokuapp.com/Project/loan.php](https://yaa25-prod.herokuapp.com/Project/loan.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/joeamed99/IT202-007/pull/98](https://github.com/joeamed99/IT202-007/pull/98)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F3 - System will generate a 12 digit/character account number per the existing rules (see Checking Account above)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147199691-c6474bcb-9d66-4f92-9383-fff32f0de177.png">
+<p>12 digit account number </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 -  Account type will be set as loan</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147199691-c6474bcb-9d66-4f92-9383-fff32f0de177.png">
+<p>account type set to loan</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - Will require a minimum value of $500</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147200023-9c268d11-6ac8-4dc7-832b-3a6aba674e33.png">
+<p>min loan amount is $500</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - System will show an APY</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147199691-c6474bcb-9d66-4f92-9383-fff32f0de177.png">
+<p>APY rate is shown </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F4 - Listing accounts and/or viewing Account Details should show any applicable APY (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://yaa25-prod.herokuapp.com/Project/view_accounts.php](https://yaa25-prod.herokuapp.com/Project/view_accounts.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/joeamed99/IT202-007/pull/96](https://github.com/joeamed99/IT202-007/pull/96)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F4 - Listing accounts and/or viewing Account Details should show any applicable APY</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147200442-e8749eda-cd39-4952-83e1-c25978aa3960.png">
+<p>APY is shown on savings and loans but not checking </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F5 - User will be able to close an account (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://yaa25-prod.herokuapp.com/Project/view_accounts.php](https://yaa25-prod.herokuapp.com/Project/view_accounts.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/joeamed99/IT202-007/pull/86](https://github.com/joeamed99/IT202-007/pull/86)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F5 - User must transfer or withdraw all funds out of the account before doing so</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147200875-d65382d7-1113-4fb3-87f1-cfc0931460a1.png">
+<p>delete account with zero balance </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F5 - Account should have a column “active” that will get set as false.</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147200997-d8016b37-aec1-444e-9886-fd6d0ea0c52a.png">
+<p> active column </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F5 - Closed accounts don’t show up anymore</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147201190-9dba9b7f-c2f5-473b-85f9-fae75975bbe3.png">
+<p>deleted accounts no longer appear in view accounts </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F6 - Admin role (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://yaa25-prod.herokuapp.com/Project/admin/admin_fncs.php](https://yaa25-prod.herokuapp.com/Project/admin/admin_fncs.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/joeamed99/IT202-007/pull/86](https://github.com/joeamed99/IT202-007/pull/86)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F6 - Will be able to search for users by firstname and/or lastname</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147201511-39cda5b4-5341-4a22-b8be-773df9e24352.png">
+<p>search by name </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F6 - Will be able to look-up specific account numbers (partial match).</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90230600/147201420-aeb7b96a-f7e0-4b87-a064-23e255349974.png">
+<p>search by account number </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr></td></tr></table>
 ### End Line item / Feature Template        
 ### End Line item / Feature Template        
 ### End Line item / Feature Template        
