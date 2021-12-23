@@ -421,6 +421,16 @@ error_log("query: $query");
       }
       return $r;
   }
+    // function getWorldID(){
+    //     $db = getDB();
+    //     $q = "SELECT id from Accounts WHERE account_number='000000000000'";
+    //     $stmt = $db->prepare($q);
+    //         $s = $stmt->execute();
+    //         $results = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     $worldID = $results["id"];
+
+    //     return $worldID;
+    }
     function getWorldID(){
         $db = getDB();
         $q = "SELECT id from Accounts WHERE account_number='000000000000'";
@@ -431,7 +441,6 @@ error_log("query: $query");
 
         return $worldID;
     }
-
 
 
         // if (!isset($v)) {
@@ -461,4 +470,3 @@ error_log("query: $query");
         
         
     }
-}
